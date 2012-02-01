@@ -19,15 +19,14 @@ from trac.wiki.formatter import Formatter, system_message
 
 from genshi.builder import tag
 
-from re import sub, compile, search, I
+from re import sub, search, I
 from StringIO import StringIO
 
 # links, autolinks, and reference-style links
 
-LINK = compile(
-    r'(\]\()([^) ]+)([^)]*\))|(<)([^>]+)(>)|(\n\[[^]]+\]: *)([^ \n]+)(.*\n)'
-)
-HREF = compile(r'href=[\'"]?([^\'" ]*)')
+LINK = r'(\]\()([^) ]+)([^)]*\))|(<)([^>]+)(>)|(\n\[[^]]+\]: *)([^ \n]+)(.*\n)'
+
+HREF = r'href=[\'"]?([^\'" ]*)'
 
 __all__ = ['MarkdownMacro']
 
